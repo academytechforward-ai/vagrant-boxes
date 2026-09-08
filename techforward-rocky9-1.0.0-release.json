@@ -1,0 +1,13 @@
+{
+  "name": "techforwardacademy/rocky9",
+  "version": "1.0.0",
+  "provider": "virtualbox",
+  "architecture": "amd64",
+  "os": "Rocky Linux 9.8",
+  "source_box": "openlogic/rockylinux-9",
+  "source_version": "9.8.20260817",
+  "artifact": "techforward-rocky9-1.0.0.box",
+  "sha256": "63D55311469F9C735CAD690E55D508B5263336C5BA50EB7EDDA4CE9E4B297DFC",
+  "ssh_user": "techforward",
+  "release_status": "release-candidate"
+}
