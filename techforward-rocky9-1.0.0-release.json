@@ -9,5 +9,5 @@
   "artifact": "techforward-rocky9-1.0.0.box",
   "sha256": "63D55311469F9C735CAD690E55D508B5263336C5BA50EB7EDDA4CE9E4B297DFC",
   "ssh_user": "techforward",
-  "release_status": "release-candidate"
+  "release_status": "released"
 }
