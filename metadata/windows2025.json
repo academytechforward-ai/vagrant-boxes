@@ -1,0 +1,17 @@
+{
+  "name": "techforwardacademy/windows2025",
+  "description": "TechForward Academy Windows Server 2025 Vagrant Box",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "providers": [
+        {
+          "name": "virtualbox",
+          "url": "https://boxes.techforward.ai/boxes/windows2025/1.0.0/techforward-windows2025-1.0.0.box",
+          "checksum_type": "sha256",
+          "checksum": "8da7082a8cb0147bfa5bbe070cbb1624675c1688481aab29206ed37123f24a82"
+        }
+      ]
+    }
+  ]
+}

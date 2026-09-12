@@ -1,0 +1,17 @@
+{
+  "name": "techforwardacademy/rocky9",
+  "description": "TechForward Academy Rocky Linux 9 Vagrant Box",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "providers": [
+        {
+          "name": "virtualbox",
+          "url": "https://boxes.techforward.ai/boxes/rocky9/1.0.0/techforward-rocky9-1.0.0.box",
+          "checksum_type": "sha256",
+          "checksum": "63d55311469f9c735cad690e55d508b5263336c5ba50eb7edda4ce9e4b297dfc"
+        }
+      ]
+    }
+  ]
+}
