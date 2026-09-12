@@ -12,6 +12,17 @@
           "checksum": "63d55311469f9c735cad690e55d508b5263336c5ba50eb7edda4ce9e4b297dfc"
         }
       ]
+    },
+    {
+      "version": "1.0.1",
+      "providers": [
+        {
+          "name": "virtualbox",
+          "url": "https://boxes.techforward.ai/boxes/rocky9/1.0.1/techforward-rocky9-1.0.1.box",
+          "checksum_type": "sha256",
+          "checksum": "24dd385b68f5b2cce49c1c124d15a480087f6f2dd6a580d54abd5d08dfe2ef18"
+        }
+      ]
     }
   ]
 }
