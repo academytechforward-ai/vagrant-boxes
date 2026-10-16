@@ -24,3 +24,7 @@ Student Vagrantfiles are maintained under the `student/` directory in this repos
 - Vagrant 2.4.9
 - Windows PowerShell or another supported terminal
 - VMs run headless by default (`vb.gui = false`)
+
+### Ubuntu 22.04 SSH note
+
+The Ubuntu 22.04 student Vagrantfile sets `config.ssh.insert_key = false` so Vagrant continues to use its built-in insecure lab key. This avoids Windows OpenSSH rejecting a rotated per-VM private key when the project is stored on filesystems or external drives that do not preserve restrictive Windows ACLs.
