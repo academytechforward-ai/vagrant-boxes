@@ -1,0 +1,17 @@
+{
+  "name": "techforwardacademy/ubuntu2204",
+  "description": "TechForward Academy Ubuntu 22.04 Vagrant Box",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "providers": [
+        {
+          "name": "virtualbox",
+          "url": "https://boxes.techforward.ai/boxes/ubuntu2204/1.0.0/techforward-ubuntu2204-1.0.0.box",
+          "checksum_type": "sha256",
+          "checksum": "4d28fb67e8d457aa9b7f00f83c3869dae0d86871f1f13cb16d460ae1e98bcbf6"
+        }
+      ]
+    }
+  ]
+}
