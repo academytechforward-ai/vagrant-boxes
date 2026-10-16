@@ -12,6 +12,17 @@
           "checksum": "4d28fb67e8d457aa9b7f00f83c3869dae0d86871f1f13cb16d460ae1e98bcbf6"
         }
       ]
+    },
+    {
+      "version": "1.0.1",
+      "providers": [
+        {
+          "name": "virtualbox",
+          "url": "https://boxes.techforward.ai/boxes/ubuntu2204/1.0.1/techforward-ubuntu2204-1.0.1.box",
+          "checksum_type": "sha256",
+          "checksum": "aa24a121c494a9aeefe247fbb930093dd276e48ff7457e3da6044ab957bcd8bc"
+        }
+      ]
     }
   ]
 }
