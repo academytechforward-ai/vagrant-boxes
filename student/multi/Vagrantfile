@@ -1,0 +1,85 @@
+# TechForward Academy - Multi-VM Vagrantfile
+# Change counts to scale the lab. Set a count to 0 to skip that platform.
+
+ROCKY_COUNT   = 2
+UBUNTU_COUNT  = 2
+WINDOWS_COUNT = 1
+KALI_COUNT    = 1
+
+Vagrant.configure("2") do |config|
+
+  (1..ROCKY_COUNT).each do |i|
+    config.vm.define "rocky#{i}" do |node|
+      node.vm.box = "techforwardacademy/rocky9"
+      node.vm.box_url = "https://boxes.techforward.ai/metadata/rocky9.json"
+      node.vm.box_version = "1.0.1"
+      node.ssh.username = "techforward"
+      node.ssh.insert_key = false
+      node.vm.hostname = "tf-rocky#{i}"
+      node.vm.network "private_network", ip: "10.9.8.#{100 + i}"
+      node.vm.provider "virtualbox" do |vb|
+        vb.memory = 4096
+        vb.cpus = 2
+        vb.gui = false
+      end
+    end
+  end
+
+  (1..UBUNTU_COUNT).each do |i|
+    config.vm.define "ubuntu#{i}" do |node|
+      node.vm.box = "techforwardacademy/ubuntu2204"
+      node.vm.box_url = "https://boxes.techforward.ai/metadata/ubuntu2204.json"
+      node.vm.box_version = "1.0.1"
+      node.ssh.username = "techforward"
+      node.ssh.insert_key = false
+      node.vm.hostname = "tf-ubuntu#{i}"
+      node.vm.network "private_network", ip: "10.9.8.#{110 + i}"
+      node.vm.provider "virtualbox" do |vb|
+        vb.memory = 4096
+        vb.cpus = 2
+        vb.gui = false
+      end
+    end
+  end
+
+  (1..WINDOWS_COUNT).each do |i|
+    config.vm.define "win#{i}" do |node|
+      node.vm.box = "techforwardacademy/windows2025"
+      node.vm.box_url = "https://boxes.techforward.ai/metadata/windows2025.json"
+      node.vm.box_version = "1.0.0"
+      node.vm.guest = :windows
+      node.vm.communicator = "winrm"
+      node.winrm.username = "techforward"
+      node.winrm.password = "Vagrant@Lab2026#Admin!"
+      node.winrm.transport = :plaintext
+      node.winrm.basic_auth_only = true
+      node.vm.hostname = "uf-win#{i}"
+      node.vm.network "private_network", ip: "10.9.8.#{120 + i}"
+      node.vm.provider "virtualbox" do |vb|
+        vb.memory = 4096
+        vb.cpus = 2
+        vb.gui = false
+      end
+    end
+  end
+
+  (1..KALI_COUNT).each do |i|
+    config.vm.define "kali#{i}" do |node|
+      node.vm.box = "techforwardacademy/kali"
+      node.vm.box_url = "https://boxes.techforward.ai/metadata/kali.json"
+      node.vm.box_version = "1.0.0"
+      node.ssh.username = "techforward"
+      node.ssh.insert_key = false
+      node.vm.hostname = "tf-kali#{i}"
+      node.vm.network "private_network", ip: "10.9.8.#{130 + i}"
+      node.vm.provider "virtualbox" do |vb|
+        vb.memory = 4096
+        vb.cpus = 2
+        vb.gui = false
+        vb.customize ["modifyvm", :id, "--vram", "128"]
+        vb.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
+      end
+    end
+  end
+
+end

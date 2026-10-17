@@ -1,0 +1,17 @@
+{
+  "name": "techforwardacademy/kali",
+  "description": "TechForward Academy Kali Linux Rolling Vagrant Box",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "providers": [
+        {
+          "name": "virtualbox",
+          "url": "https://boxes.techforward.ai/boxes/kali/1.0.0/techforward-kali-1.0.0.box",
+          "checksum_type": "sha256",
+          "checksum": "e423cb0d2c635f6b1e8cf9dbc5f6abe3cf34327e0f1bb995feb9da1ce52f46ac"
+        }
+      ]
+    }
+  ]
+}
