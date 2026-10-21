@@ -8,7 +8,7 @@ Official Vagrant box repository for TechForward Academy training environments.
 |---|---|---:|---|---|
 | Rocky Linux 9 | `techforwardacademy/rocky9` | `1.0.1` | VirtualBox | `techforward` |
 | Windows Server 2025 | `techforwardacademy/windows2025` | `1.0.0` | VirtualBox | `techforward` |
-| Ubuntu Server 22.04 | `techforwardacademy/ubuntu2204` | `1.0.1` | VirtualBox | `techforward` |
+| Ubuntu Server 22.04 | `techforwardacademy/ubuntu2204` | `1.0.2` | VirtualBox | `techforward` |
 | Kali Linux Rolling | `techforwardacademy/kali` | `1.0.0` | VirtualBox | `techforward` |
 
 ## Delivery Architecture
