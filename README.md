@@ -26,9 +26,21 @@ Student Vagrantfiles are maintained under the `student/` directory in this repos
 - Windows PowerShell or another supported terminal
 - VMs run headless by default (`vb.gui = false`)
 
-### Ubuntu 22.04 SSH note
+### Ubuntu 22.04 v1.0.2 SSH and Windows drive note
 
-The Ubuntu 22.04 student Vagrantfile sets `config.ssh.insert_key = false` so Vagrant continues to use its built-in insecure lab key. This avoids Windows OpenSSH rejecting a rotated per-VM private key when the project is stored on filesystems or external drives that do not preserve restrictive Windows ACLs.
+Ubuntu 22.04 v1.0.2 automatically replaces Vagrant's shared bootstrap SSH key with a unique key per VM (`config.ssh.insert_key = true`). Password-based SSH authentication is disabled.
+
+**On Windows, before `vagrant up` from an exFAT/external working drive**, set `VAGRANT_DOTFILE_PATH` to an NTFS directory on C: so Windows OpenSSH can enforce private-key permissions:
+
+```powershell
+# Choose a unique state directory for each separate Vagrant project.
+$env:VAGRANT_DOTFILE_PATH = "$env:LOCALAPPDATA\TechForward\VagrantState\ubuntu2204"
+vagrant up
+```
+
+Keep the same `VAGRANT_DOTFILE_PATH` when running `vagrant ssh`, `vagrant reload`, or `vagrant destroy` in that project. For `student/multi/Vagrantfile`, use a different state directory (for example `...\VagrantState\multi-lab`).
+
+The single-Ubuntu Vagrantfile has a `10.9.8.XX` private-network IP placeholder; replace `XX` with a suitable unused address before running `vagrant up`.
 
 ## Multi-VM Lab
 

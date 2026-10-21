@@ -29,9 +29,9 @@ Vagrant.configure("2") do |config|
     config.vm.define "ubuntu#{i}" do |node|
       node.vm.box = "techforwardacademy/ubuntu2204"
       node.vm.box_url = "https://boxes.techforward.ai/metadata/ubuntu2204.json"
-      node.vm.box_version = "1.0.1"
+      node.vm.box_version = "1.0.2"
       node.ssh.username = "techforward"
-      node.ssh.insert_key = false
+      node.ssh.insert_key = true
       node.vm.hostname = "tf-ubuntu#{i}"
       node.vm.network "private_network", ip: "10.9.8.#{110 + i}"
       node.vm.provider "virtualbox" do |vb|
