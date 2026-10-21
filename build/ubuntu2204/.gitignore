@@ -1,0 +1,17 @@
+# Local credentials and generated installer response
+/http/user-data
+/*.pkrvars.hcl
+/*.auto.pkrvars.hcl
+# ISO and Packer/VirtualBox outputs
+/iso/
+/output/
+/packer_cache/
+/.packer.d/
+*.box
+*.ova
+*.vdi
+*.vmdk
+*.vbox
+*.vbox-prev
+*.iso
+*.log

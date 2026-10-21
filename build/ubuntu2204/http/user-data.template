@@ -1,0 +1,37 @@
+#cloud-config
+autoinstall:
+  version: 1
+
+  locale: en_US.UTF-8
+
+  keyboard:
+    layout: us
+
+  identity:
+    hostname: tf-ubuntu2204
+    username: techforward
+    password: __GENERATED_PASSWORD_HASH__
+
+  ssh:
+    install-server: true
+    allow-pw: true
+
+  storage:
+    layout:
+      name: direct
+
+  packages:
+    - curl
+    - wget
+    - ca-certificates
+    - openssh-server
+    - sudo
+
+  updates: security
+
+  # Bootstrap passwordless sudo before Packer connects.
+  late-commands:
+    - sh -c "echo 'techforward ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/90-techforward"
+    - chmod 0440 /target/etc/sudoers.d/90-techforward
+
+  shutdown: reboot
